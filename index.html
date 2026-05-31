@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APK Runner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Run Your APK Here!</h1>
+    <p>Upload your APK file to simulate it in a WebAssembly-based Android emulator.</p>
+    <input type="file" id="apkUploader" accept=".apk">
+    <canvas id="androidEmulator" width="800" height="600"></canvas>
+    <script>
+        document.getElementById('apkUploader').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                alert(`Selected APK: ${file.name}`);
+                // Placeholder: Load the APK into the WebAssembly Android emulator here
+            }
+        });
+    </script>
+</body>
+</html>
